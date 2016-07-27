@@ -1,0 +1,45 @@
+// A launch configuration that compiles the extension and then opens it inside a new window
+{
+    "version": "0.2.0",
+    "configurations": [
+        {
+            "name": "Launch",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": null,
+			"cwd": "${workspaceRoot}",
+			"program": "${workspaceRoot}/out/src/app.js",
+			"env": {
+				"NODE_ENV": "development"
+			},
+            "stopOnEntry": false,
+            "sourceMaps": true,
+			"externalConsole": false,
+            "outDir": "${workspaceRoot}/out/src",
+            "preLaunchTask": "npm_compile"
+		},
+		{
+            "name": "Test",
+            "type": "node",
+            "request": "launch",
+            "runtimeExecutable": null,
+			"cwd": "${workspaceRoot}",
+			"program": "${workspaceRoot}/node_modules/mocha/bin/_mocha",
+			"args": ["-u", "tdd", "./out/src/test.js"],
+			"env": {
+				"NODE_ENV": "development"
+			},
+            "stopOnEntry": false,
+            "sourceMaps": true,
+			"externalConsole": false,
+            "outDir": "${workspaceRoot}/out/src",
+            "preLaunchTask": "npm"
+		},
+		{
+			"name": "Attach",
+			"type": "node",
+			"request": "attach",
+			"port": 5858
+		}
+	]
+}
