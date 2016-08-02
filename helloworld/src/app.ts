@@ -7,3 +7,4 @@ import { Message } from './message';
 var msg = new Message('Hello, world!');
 msg.sayMessage();
 
+process.exit();
