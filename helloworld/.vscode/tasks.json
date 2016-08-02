@@ -10,7 +10,6 @@
     "version": "0.1.0",
 
     // we want to run npm
-    //"command": "npm",
     "command": "cmd",
 
     // the command is a shell script
@@ -20,7 +19,6 @@
     "showOutput": "always", //silent",
 
     // we run the custom script "compile" as defined in package.json
-    //"args": ["run", "compile", "--loglevel", "silent"],
     "args": ["/c"],
 
     // The tsc compiler is started in watching mode
