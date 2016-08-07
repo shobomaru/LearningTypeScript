@@ -6,6 +6,8 @@ var conn = net.connect(12345, "localhost");
 
 conn.on("error", function(e) {
 	console.log("[Error]" + e + "\n");
+	conn.destroy();
+	process.exit();
 })
 
 conn.on("connect", function() {
