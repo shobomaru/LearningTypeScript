@@ -1,0 +1,41 @@
+// Available variables which can be used inside of strings.
+// ${workspaceRoot}: the root folder of the team
+// ${file}: the current opened file
+// ${fileBasename}: the current opened file's basename
+// ${fileDirname}: the current opened file's dirname
+// ${fileExtname}: the current opened file's extension
+// ${cwd}: the current working directory of the spawned process
+
+{
+    "version": "0.1.0",
+
+    // we want to run npm
+    "command": "cmd",
+
+    // the command is a shell script
+    "isShellCommand": true,
+
+    // show the output window only if unrecognized errors occur.
+    "showOutput": "always", //silent",
+
+    // we run the custom script "compile" as defined in package.json
+    "args": ["/c"],
+
+    // The tsc compiler is started in watching mode
+    "isWatching": true,
+
+    // use the standard tsc in watch mode problem matcher to find compile problems in the output.
+    //"problemMatcher": "$tsc-watch",
+
+    "suppressTaskName": true,
+
+    "tasks": [
+        {
+            "taskName": "npm_compile",
+            "isBuildCommand": true,
+            "args": ["npm", "run", "compile", "--loglevel", "silent"],
+            "isWatching": true,
+            "problemMatcher": "$tsc-watch"
+        }
+    ]
+}
