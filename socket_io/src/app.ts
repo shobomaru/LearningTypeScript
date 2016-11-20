@@ -12,7 +12,7 @@ function main() {
 	let si = io.listen(sv);
 	si.sockets.on("connection", (socket) => {
 		socket.on("message", (data) => {
-			si.sockets.emit("message", "I got your message: " + data.value);
+			si.sockets.emit("message", "Message: <b>" + data.value + "</b>");
 		});
 	});
 }

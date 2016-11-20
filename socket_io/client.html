@@ -21,7 +21,7 @@ sock.on("message", function(msg) {
 	document.getElementById("sock_msg").innerHTML = msg;
 });
 function socketSend() {
-	sock.emit("message", { value: document.getElementById("sock_msg").value });
+	sock.emit("message", { value: document.getElementById("msg").value });
 }
 		//--></script>
 	</body>
